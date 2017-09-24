@@ -32,6 +32,7 @@ void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	if (!Barrel) { return;  }
+	UE_LOG(LogTemp, Warning, TEXT("Aim at"));
 
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
