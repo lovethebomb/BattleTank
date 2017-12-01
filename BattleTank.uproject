@@ -26,6 +26,10 @@
 		{
 			"Name": "OculusRift",
 			"Enabled": false
+		},
+		{
+			"Name": "OculusInput",
+			"Enabled": false
 		}
 	]
 }
