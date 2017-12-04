@@ -42,14 +42,14 @@ void UTankTrack::ApplySidewaysForce()
 void UTankTrack::SetThrottle(float Throttle)
 {
 	CurrentThrottle = FMath::Clamp<float>(CurrentThrottle + Throttle, -1, 1);
-	UE_LOG(LogTemp, Warning, TEXT("SetThrottle: %f (%f)"), CurrentThrottle, Throttle);
+	// UE_LOG(LogTemp, Warning, TEXT("SetThrottle: %f (%f)"), CurrentThrottle, Throttle);
 }
 
 void UTankTrack::DriveTrack()
 {
 	// Clamp Throttle value so that player can't overdrive
 	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
-	UE_LOG(LogTemp, Warning, TEXT("ForceApplied: %s"), *ForceApplied.ToString());
+	// UE_LOG(LogTemp, Warning, TEXT("ForceApplied: %s"), *ForceApplied.ToString());
 	auto ForceLocation = GetComponentLocation();
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
